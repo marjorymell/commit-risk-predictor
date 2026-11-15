@@ -1,23 +1,23 @@
 {
-  "n_commits": 2123,
-  "bug_rate": 0.364,
+  "n_commits": 2141,
+  "bug_rate": 0.363,
   "train_period": [
     "2020-06-16",
-    "2024-03-01"
+    "2024-04-02"
   ],
   "test_period": [
-    "2024-03-04",
-    "2026-04-28"
+    "2024-04-02",
+    "2026-05-13"
   ],
-  "roc_auc_logistic_regression": 0.75,
-  "roc_auc_random_forest": 0.752,
-  "bugs_caught_reviewing_top_20pct": 0.337,
-  "bugs_caught_reviewing_top_30pct": 0.523,
+  "roc_auc_logistic_regression": 0.753,
+  "roc_auc_random_forest": 0.759,
+  "bugs_caught_reviewing_top_20pct": 0.335,
+  "bugs_caught_reviewing_top_30pct": 0.518,
   "top_features": {
-    "lines_added": 0.1447,
-    "n_prior_devs": 0.0046,
-    "n_files": 0.0037,
-    "entropy": 0.0031,
-    "n_subsystems": 0.0013
+    "lines_added": 0.118,
+    "n_prior_devs": 0.0072,
+    "entropy": 0.0035,
+    "author_experience": 0.0022,
+    "n_subsystems": 0.0017
   }
 }

@@ -1,4 +1,41 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commit-risk-predictor"
+version = "0.1.0"
+description = "Predict how likely a commit is to introduce a bug (Just-in-Time defect prediction)."
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.2",
+    "scikit-learn>=1.5",
+    "matplotlib>=3.9",
+    "joblib>=1.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8",
+    "ipykernel>=6.29",
+]
+
+[project.scripts]
+commit-risk-extract = "commit_risk.extract:main"
+commit-risk-train = "commit_risk.train:main"
+commit-risk-predict = "commit_risk.predict:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.pytest.ini_options]
-# lets tests do `from extract_dataset import ...` without path hacks
-pythonpath = ["src"]
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# E/F: errors, I: import order, UP: modern syntax, B: likely bugs, SIM: simplifications
+select = ["E", "F", "I", "UP", "B", "SIM"]
