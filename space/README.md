@@ -1,11 +1,10 @@
 ---
 title: Commit Risk Predictor
-emoji: 🐞
-colorFrom: red
-colorTo: yellow
-sdk: gradio
-sdk_version: 6.32.0
-app_file: app.py
+emoji: 🔍
+colorFrom: blue
+colorTo: gray
+sdk: static
+app_file: index.html
 pinned: false
 license: mit
 short_description: Estimate how likely a commit is to introduce a bug
@@ -14,7 +13,8 @@ short_description: Estimate how likely a commit is to introduce a bug
 # Commit Risk Predictor
 
 Interactive demo of [commit-risk-predictor](https://github.com/marjorymell/commit-risk-predictor):
-a Random Forest trained on the git history of [vtex/faststore](https://github.com/vtex/faststore)
-to estimate how likely a commit is to introduce a bug (Just-in-Time defect prediction, SZZ labels).
+estimates how likely a commit is to introduce a bug (Just-in-Time defect prediction), trained on the
+git history of [vtex/faststore](https://github.com/vtex/faststore) with SZZ labels.
 
-Source code, tests and evaluation live in the GitHub repository.
+The model runs in the browser: a logistic regression exported from scikit-learn to `model.json`
+and evaluated by `risk.js`. Source code, tests and evaluation live in the GitHub repository.
