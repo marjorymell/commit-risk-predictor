@@ -1,0 +1,1 @@
+commit-risk-predictor @ git+https://github.com/marjorymell/commit-risk-predictor@main
