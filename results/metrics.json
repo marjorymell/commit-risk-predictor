@@ -1,0 +1,23 @@
+{
+  "n_commits": 2123,
+  "bug_rate": 0.364,
+  "train_period": [
+    "2020-06-16",
+    "2024-03-01"
+  ],
+  "test_period": [
+    "2024-03-04",
+    "2026-04-28"
+  ],
+  "roc_auc_logistic_regression": 0.75,
+  "roc_auc_random_forest": 0.752,
+  "bugs_caught_reviewing_top_20pct": 0.337,
+  "bugs_caught_reviewing_top_30pct": 0.523,
+  "top_features": {
+    "lines_added": 0.1447,
+    "n_prior_devs": 0.0046,
+    "n_files": 0.0037,
+    "entropy": 0.0031,
+    "n_subsystems": 0.0013
+  }
+}
