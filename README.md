@@ -40,6 +40,8 @@ Evaluated on commits the model never saw, from a later period than the training 
 
 ## How it works
 
+The full reasoning, with charts, is in [`notebooks/analysis.ipynb`](notebooks/analysis.ipynb).
+
 ```
 git history ──► SZZ labeling ──► features ──► temporal split ──► models ──► CLI / browser demo
 ```
@@ -51,7 +53,9 @@ git history ──► SZZ labeling ──► features ──► temporal split �
    touched files (previous changes, previous fixes, number of developers, age) and author
    experience. Each commit is described **using only its past**, to avoid data leakage.
 3. **Evaluation.** Training uses the oldest 80% of commits and testing the newest 20%, never
-   shuffled. The last 180 days are dropped because their bugs may not have been found yet.
+   shuffled: a random split would report AUC 0.82 instead of 0.75, an optimistic number that
+   would not hold on future commits. The last 180 days are dropped because their bugs may not
+   have been found yet.
 
 ## Usage
 
@@ -99,6 +103,7 @@ src/commit_risk/
 ├── export.py        logistic regression -> JSON for the browser
 └── predict.py       CLI: risk of a single commit
 space/               static Hugging Face Space (index.html + risk.js + model.json)
+notebooks/           analysis.ipynb: data exploration and the reasoning behind each decision
 app/app.py           optional Gradio version of the demo (pip install -e ".[app]")
 tests/               pytest suite, including real temporary git repositories
 ```
