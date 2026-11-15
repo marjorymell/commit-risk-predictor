@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+# lets tests do `from extract_dataset import ...` without path hacks
+pythonpath = ["src"]
+testpaths = ["tests"]
