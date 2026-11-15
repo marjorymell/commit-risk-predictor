@@ -1,0 +1,16 @@
+# Python virtual environment (like node_modules)
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Trained models (generated, can be rebuilt)
+models/*.joblib
+
+# OS / editor
+.DS_Store
+.vscode/
